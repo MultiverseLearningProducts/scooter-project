@@ -4,6 +4,8 @@ class Scooter{
     this.user = user;
   }
 
+  station = this.station;
+  user = this.user;
   serial = Math.floor(Math.random() * 1000) + 1;
   charge = Math.floor(Math.random() * 100) + 1;
   isBroken = false;
