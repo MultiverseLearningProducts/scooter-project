@@ -29,10 +29,10 @@ class ScooterApp {
         this.registeredUser[username].loggedIn = true;
         console.log('user has logged in successfully');
       }else{
-        console.log('Username or password is incorrect.');
+        throw new Error('Username or password is incorrect.');
       }
     }else{
-      console.log('Username or password is incorrect.');
+      throw new Error('Username or password is incorrect.');
     }
   }
 

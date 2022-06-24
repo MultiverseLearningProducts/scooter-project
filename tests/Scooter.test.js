@@ -3,23 +3,37 @@ const User = require('../src/User')
 
 //typeof scooter === object
 describe('scooter object', () => {
-  test('does something', () => {
-    // edit this to be a real test!
-    expect(false).toEqual(true);
-  }
-)
-})
+  test('verified if scooter is an object', () => {
+    const scooter = new Scooter();
+    expect(scooter && typeof scooter === 'object').toBe(true);
+  });
+});
 
 //Method tests
 describe('scooter methods', () => {
-  // tests here!
+  test('the rent method of the Scooter object', () => {
+    const scooter2 = new Scooter();
+    scooter2.charge = 100;
+    scooter2.isBroken = false;
+    expect(scooter2.rent()).toBe(console.log('Enjoy the ride!'));
+  });
+  test('the dock method of the scooter object', () => {
+    const scooter3 = new Scooter('', 'GuppyForLife');
+    scooter3.dock('Brooklyn');
+    expect(scooter3.station).toBe('Brooklyn');
+    expect(scooter3.docked).toBe(true);
+    expect(scooter3.user).toBe('');
+  });
+  test('scooter.isBroken property should be false after repair', () => {
+    const newScooter = new Scooter('Queens');
+    newScooter.requestRepair();
+    expect(newScooter.isBroken).toBe(false);
+  });
+  test('recharge method uses async and await', async () => {
+    const newScooter = new Scooter();
+    await newScooter.recharge();
+    console.log('TEST COMPLETE')
+    expect(newScooter.charge).toBe(100);
+  });
+});
 
-  //rent method
-
-  //dock method
-
-  //requestRepair method
-
-  //charge method
-
-})
