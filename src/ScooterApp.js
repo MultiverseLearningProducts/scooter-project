@@ -3,14 +3,18 @@ const Scooter = require('./Scooter');
 
 class ScooterApp {
   static scooterSessions = [];
-  stations = {
-    Manhattan: [],
-    Brooklyn: [],
-    Queens: [],
-    Bronx: [],
-    StatenIsland: []
-  };
-  registeredUser = {};
+  
+  constructor(){
+    this.stations = {
+      Manhattan: [],
+      Brooklyn: [],
+      Queens: [],
+      Bronx: [],
+      StatenIsland: []
+    };
+    this.registeredUser = {};
+    this.constructor.scooterSessions.push(this);
+}
 
   register(user){
     if(user.username in this.registeredUser){
@@ -41,9 +45,17 @@ class ScooterApp {
     this.stations[location].push(scooter);
   }
 
-  removeScooter(scooterToRemove){
-    const serialNumber = scooterToRemove.serial;
-    
+  removeScooter(scooterToRemove) {
+    const serial = scooterToRemove[0].serial
+    let targetScooterArray = this.stations[scooterToRemove[0].station];
+    let idx = -1;
+
+    targetScooterArray.find((scooter, i) => {
+      if (scooter.serial === serial) {
+        idx = i;
+      }
+    });
+    targetScooterArray.splice(idx, 1);
   }
 }
 

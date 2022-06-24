@@ -4,6 +4,8 @@ class Scooter{
     this.user = user;
   }
   
+  user = this.user;
+  station = this.station;
   serial = Math.floor(Math.random() * 1000) + 1;
   charge = Math.floor(Math.random() * 100) + 1;
   isBroken = false;
@@ -11,6 +13,7 @@ class Scooter{
 
   rent(){
     if(this.isBroken === false && this.charge > 20){
+      return true;
       console.log('Enjoy the ride!');
     }else if(this.charge <= 20){
       throw new Error('Scooter low on battery, please charge.');

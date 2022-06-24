@@ -15,7 +15,7 @@ describe('scooter methods', () => {
     const scooter2 = new Scooter();
     scooter2.charge = 100;
     scooter2.isBroken = false;
-    expect(scooter2.rent()).toBe(console.log('Enjoy the ride!'));
+    expect(scooter2.rent()).toBe(true);
   });
   test('the dock method of the scooter object', () => {
     const scooter3 = new Scooter('', 'GuppyForLife');
