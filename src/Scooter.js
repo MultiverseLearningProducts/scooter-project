@@ -3,9 +3,7 @@ class Scooter{
     this.station = station;
     this.user = user;
   }
-
-  station = this.station;
-  user = this.user;
+  
   serial = Math.floor(Math.random() * 1000) + 1;
   charge = Math.floor(Math.random() * 100) + 1;
   isBroken = false;
@@ -31,14 +29,28 @@ class Scooter{
     }
   }
 
-  async charge() {
-    console.log('Starting charge');
+  async recharge() {
 
-    await new Promise(resolve => setTimeout(resolve, 2000)); // wait 2 seconds
-    this.charge = 100
+    console.log('Charging....')
+    await new Promise(resolve => {
+      setTimeout(resolve, 1000)
+      this.charge = 100
+    })
+    console.log('scooter has been fully charged')
+  }
 
-    console.log('Charge complete');   
- }
+  requestRepair() {
+
+    console.log('Thank you for the repair request')
+
+    setTimeout(() => {
+      console.log('charging...')
+    }, 2000)
+
+    this.isBroken = false
+
+    console.log('Repairs are complete')
+  }
 
 }
 
