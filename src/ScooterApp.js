@@ -6,7 +6,7 @@ class ScooterApp {
   stations = {
     Manhattan: [],
     Brooklyn: [],
-    Queen: [],
+    Queens: [],
     Bronx: [],
     StatenIsland: []
   };
