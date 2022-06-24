@@ -1,5 +1,5 @@
-const User = require('./User')
-const Scooter = require('./Scooter')
+const User = require('./User');
+const Scooter = require('./Scooter');
 
 class ScooterApp {
   static scooterSessions = [];

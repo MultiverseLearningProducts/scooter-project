@@ -1,5 +1,5 @@
-const Scooter = require('../src/Scooter')
-const User = require('../src/User')
+const Scooter = require('../src/Scooter');
+const User = require('../src/User');
 
 //typeof scooter === object
 describe('scooter object', () => {
